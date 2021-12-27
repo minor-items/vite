@@ -13,6 +13,7 @@ const { proxy, appContext } = getCurrentInstance()
 const { query: ApiQuery } = appContext.config.globalProperties.$api
 
 function ClickOn () {
+  count.value++
   ApiQuery.alert1().then(() => {
     alert(count.value)
   })
