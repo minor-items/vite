@@ -1,0 +1,28 @@
+<template>
+  <p>次数 <span :class="{ countStyle: count }">{{count}}</span></p>
+  <h1 class="red">overview</h1>
+  <button @click="ClickOn" >接口</button>
+</template>
+
+<script setup>
+import {
+  ref, getCurrentInstance
+} from 'vue'
+const count = ref(0)
+const { proxy, appContext } = getCurrentInstance()
+const { query: ApiQuery } = appContext.config.globalProperties.$api
+
+function ClickOn () {
+  ApiQuery.alert1().then(() => {
+    alert(count.value)
+  })
+}
+</script>
+
+<style scoped lang="stylus">
+.red
+  color: red
+.countStyle
+  color: #409eff
+  font-size: 20px
+</style>
