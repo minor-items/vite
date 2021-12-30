@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import qiankun from 'vite-plugin-qiankun';
 import { resolve } from "path";
 
@@ -9,11 +10,19 @@ const { name } = require('./package');
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
   return {
-    plugins: [vue(), qiankun('vue3Vite', { useDevMode: false })],
+    plugins: [vue(), vueJsx(), qiankun('vue3Vite', { useDevMode: true })],
     resolve: {
-      extensions: ['.js', 'ts', '.vue', '.json'],
+      extensions: ['.js', 'ts', '.tsx', '.jsx', '.vue', '.styl', '.json'],
         alias: {
           '@': resolve('src'),
+          '@api': resolve('src/api'),
+          '@img': resolve('src/assets/img'),
+          '@config': resolve('src/config'),
+          '@mixins': resolve('src/mixins'),
+          '@router': resolve('src/router'),
+          '@store': resolve('src/store'),
+          '@utils': resolve('src/utils'),
+          '@layout': resolve('src/layout'),
         },
       },
     server: {

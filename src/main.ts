@@ -1,19 +1,20 @@
 import { createApp } from 'vue'
-import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper';
-import { createRouter, createWebHistory } from 'vue-router';
-import route from "./router"
+import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
+import { createRouter, createWebHistory } from 'vue-router'
+import { routes, beforeEach, afterEach } from "./router"
 import store from "./store"
 import API from './api'
 import App from './App.vue'
 
-const { __POWERED_BY_QIANKUN__ } = qiankunWindow
-const { routes, beforeEach, afterEach } = route
-let router = null;
-let instance = null;
-let history = null;
+import './assets/stylus/Init'
 
-function render(props = {}) {
-  const { container, name } = props;
+const { __POWERED_BY_QIANKUN__ } = qiankunWindow
+let router = null
+let instance: any = null
+let history: any = null
+
+function render(props: any = {}) {
+  const { container, name } = props
   const historyAddress = __POWERED_BY_QIANKUN__
     ? name
     : '/'
@@ -30,12 +31,12 @@ function render(props = {}) {
   })
 
   instance = createApp(App);
-  instance.use(API);
-  instance.use(router);
+  instance.use(API)
+  instance.use(router)
   instance.use(store)
   instance.mount(container
-    ? container.querySelector('#app')
-    :document.getElementById("app"))
+    ? container.querySelector('#minor-vue3-vite')
+    :document.getElementById("minor-vue3-vite"))
 }
 
 renderWithQiankun({
