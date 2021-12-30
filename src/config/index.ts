@@ -1,4 +1,6 @@
+import theme from './themeOverrides'
 export default {
+  ...theme,
   //操作正常code，支持String、Array、int多种类型
   successCode: [200, 0],
   //是否显示顶部进度条

@@ -1,6 +1,5 @@
 import {
   create,
-  NConfigProvider,
   NButton
 } from 'naive-ui'
 
