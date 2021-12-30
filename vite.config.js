@@ -13,21 +13,21 @@ export default defineConfig(({ mode }) => {
     plugins: [vue(), vueJsx(), qiankun('vue3Vite', { useDevMode: true })],
     resolve: {
       extensions: ['.js', 'ts', '.tsx', '.jsx', '.vue', '.styl', '.json'],
-        alias: {
-          '@': resolve('src'),
-          '@api': resolve('src/api'),
-          '@img': resolve('src/assets/img'),
-          '@config': resolve('src/config'),
-          '@mixins': resolve('src/mixins'),
-          '@router': resolve('src/router'),
-          '@store': resolve('src/store'),
-          '@utils': resolve('src/utils'),
-          '@layout': resolve('src/layout'),
-        },
+      alias: {
+        '@': resolve('src'),
+        '@api': resolve('src/api'),
+        '@img': resolve('src/assets/img'),
+        '@config': resolve('src/config'),
+        '@mixins': resolve('src/mixins'),
+        '@router': resolve('src/router'),
+        '@store': resolve('src/store'),
+        '@utils': resolve('src/utils'),
+        '@layout': resolve('src/layout'),
       },
+    },
     server: {
       host: '0.0.0.0',
-      port: 9080,
+      port: 9090,
       cors: true,
     },
     output: {
