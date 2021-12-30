@@ -23,7 +23,7 @@ function render(props: any = {}) {
     history,
     routes
   })
-  router.beforeEach((to, from, next) => {
+  router.beforeEach((to: any, from: any, next: any) => {
     beforeEach(to, from, next)
   })
   router.afterEach(() => {
@@ -40,13 +40,13 @@ function render(props: any = {}) {
 }
 
 renderWithQiankun({
-  mount(props) {
+  mount(props: any) {
     render(props)
   },
   bootstrap() {
     console.log('bootstrap')
   },
-  unmount(props) {
+  unmount(props: any) {
     instance.unmount()
     instance._container.innerHTML = ''
     history.destroy()

@@ -6,7 +6,6 @@ declare module '*.vue' {
 }
 
 declare module '@config'
-declare module '@layout'
 
 declare interface ImportMeta {
 }
