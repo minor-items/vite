@@ -22,3 +22,15 @@ module.exports = [
 //     { name: '苹果', value: 'apple' }
 //   ]
 // }
+// {
+//   type: 'checkbox',
+//   name: 'lang',
+//   message: '语言',
+//   choices: [
+
+//       { name: 'javascript', value: 1 },
+//       { name: 'php', value: 2 },
+//       { name: 'go', value: 3 },
+      
+//   ],
+// }
