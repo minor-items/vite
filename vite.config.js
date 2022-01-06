@@ -20,9 +20,7 @@ export default defineConfig(({ mode }) => {
           '@config': resolve('src/config'),
           '@mixins': resolve('src/mixins'),
           '@router': resolve('src/router'),
-          <%_ if (isVuex) { _%>
           '@store': resolve('src/store'),
-          <%_ } _%>
           '@utils': resolve('src/utils'),
           '@layout': resolve('src/layout'),
         },

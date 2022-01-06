@@ -2,9 +2,7 @@ import { createApp } from 'vue'
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes, beforeEach, afterEach } from "./router"
-<%_ if (isVuex) { _%>
-  import store from "./store"
-<%_ } _%>
+import store from "./store"
 import API from './api'
 import App from './App.vue'
 
@@ -35,9 +33,7 @@ function render(props: any = {}) {
   instance = createApp(App);
   instance.use(API)
   instance.use(router)
-  <%_ if (isVuex) { _%>
-    instance.use(store)
-  <%_ } _%>
+  instance.use(store)
   instance.mount(container
     ? container.querySelector('#<%= projectName %>')
     :document.getElementById('<%= projectName %>'))
